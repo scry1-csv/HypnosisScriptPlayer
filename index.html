@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja-jp">
+
+<head>
+    <meta charset="utf-8">
+    <title>HypnosisScriptPlayer</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+    <div id="settings">
+        <div id="settings_text">
+            <h1>HypnosisScriptPlayer</h1>
+            <p>催眠文章を自動スクロールさせて鑑賞するためのWebアプリです。<br />
+                スクロール速度やテキストサイズを調整したり、背景画像を設定したりできます。<br />
+                下のフォームに文章を入力し、必要な場合は背景画像を選択してから、再生開始ボタンを押してください。
+            </p>
+        </div>
+
+        <div><button id="button_start">再生開始</button></div>
+
+        <div style="padding-top: 40px; padding-left: 10px;">背景画像:
+            <input id="input_background_image" type="file" accept="image/*" />
+        </div>
+
+        <div>
+            <textarea id="textarea_script" placeholder="ここに表示したい催眠文章を入力してください。"></textarea>
+        </div>
+    </div>
+
+    <div id="player" style="display: none;">
+        <p id="text"></p>
+        <div id="background_image_container">
+            <img id="background_image" src="" alt="背景画像">
+        </div>
+        <div id="player_controller_container">
+            <div id="player_button_container">
+                <button id="button_play">
+                    再生
+                </button>
+                <button id="button_stop">
+                    停止
+                </button>
+                <button id="button_fullscreen">
+                    全画面
+                </button>
+                <button id="button_return">
+                    戻る
+                </button>
+            </div>
+            <div id="player_settings_container">
+                <div style="margin:12px;">
+                    <label>テーマ</label>
+                    <span>
+                        <input type="radio" id="input_theme_light" name="theme" value="light" checked>
+                        <label for="input_theme_light">ライト</label>
+                        <input type="radio" id="input_theme_dark" name="theme" value="dark">
+                        <label for="input_theme_dark">ダーク</label>
+                    </span>
+                </div>
+                <div>
+                    <label class="range_label" for="scroll_speed">スクロール速度</label>
+                    <input type="range" id="scroll_speed" value="10" min="1" max="20" step="1">
+                    <span id="scroll_speed_value" class="setting_value">10</span>
+                </div>
+                <div>
+                    <label class="range_label" for="text_size">文字サイズ</label>
+                    <input type="range" id="text_size" value="20" min="10" max="64" step="1">
+                    <span id="text_size_value" class="setting_value">20</span>
+                </div>
+                <div>
+                    <label class="range_label" for="background_image_opacity">背景画像の透明度</label>
+                    <input type="range" id="background_image_opacity" value="50" min="0" max="100" step="1">
+                    <span class="setting_value"><span id="opacity_value">50</span>%</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

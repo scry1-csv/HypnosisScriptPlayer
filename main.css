@@ -1,0 +1,118 @@
+html {
+    height: 100%;
+    scrollbar-width: none;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#settings_text {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#button_start {
+    width: calc(100% - 24px);
+    margin: 12px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#textarea_script {
+    width: calc(100% - 24px);
+    margin: 12px;
+    height: 40vh;
+    resize: none;
+    box-sizing: border-box;
+}
+
+#text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 800px;
+    align-content: center;
+    text-align: center;
+}
+
+#background_image_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+#background_image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#player_controller_container {
+    position: fixed;
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    border: 1px solid black;
+    transform: translate(-50%, -50%);
+    background-color: silver;
+}
+
+#player_button_container {
+    text-align: center;
+}
+
+#player_button_container>button {
+    margin: 10px;
+}
+
+#player_settings_container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#player_settings_container>div {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player_settings_container>div>label.range_label {
+    display: inline-block;
+    text-align: right;
+    width: 9em;
+}
+
+.setting_value {
+    width: 3em;
+}
+
+#player_settings_container input {
+    margin: 5px;
+    vertical-align: middle;
+}
+
+#player_settings_container input[type="range"] {
+    width: 50%;
+}
+
+button {
+    margin: 3px;
+    padding: 3px;
+    vertical-align: middle;
+}
